@@ -10,7 +10,8 @@ feature "Visitor can register" do
 
     click_on "Create Account"
 
-    expect(page).to have_content "Hello, user@users.com"
+    expect(page).to have_content "links"
+    expect(page).to have_content "logout"
   end
 
   # scenario "passwords do not match" do
@@ -26,5 +27,9 @@ feature "Visitor can register" do
   #
   #   expect(page).to_not have_content "Hello, user1@users.com"
   #   expect(page).to have_content "Please sign up"
+  # end
+
+  # scenario "email is already registered" do
+  #
   # end
 end
