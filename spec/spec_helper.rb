@@ -1,8 +1,24 @@
-module Factory
+module Helpers
   def create_links
     Link.create(title: "Kewl Link", url: "http://julyytran.github.io/game-time/")
     Link.create(title: "Awesome Link", url: "http://julyytran.github.io/game-time/")
     Link.create(title: "Legit Link", url: "http://julyytran.github.io/game-time/")
+  end
+
+  def login_user
+    user = User.create(email: "user@users.com", password: "password")
+
+    visit root_path
+
+    expect(page).to have_content "Log In or Sign Up"
+
+    click_on "Log In"
+
+    fill_in "Email", with: "user@users.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+
+    click_on "Login"
   end
 end
 
