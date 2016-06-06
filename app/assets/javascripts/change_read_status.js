@@ -26,7 +26,7 @@ function updateStatus(linkID, status){
     },
     dataType: "json",
     success: function(datum) {
-      $("#links-list #" + datum.id).replaceWith(createIdeaHTML(datum));
+      $("#links-list #" + datum.id).replaceWith(createLinkHTML(datum));
     }
   });
 }

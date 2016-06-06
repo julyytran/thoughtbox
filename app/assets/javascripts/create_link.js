@@ -11,7 +11,7 @@ function createLink() {
         }
       },
       success: function(datum) {
-        $('#links-list').prepend(createIdeaHTML(datum));
+        $('#links-list').prepend(createLinkHTML(datum));
         $('#title').val('');
         $('#url').val('');
       },
