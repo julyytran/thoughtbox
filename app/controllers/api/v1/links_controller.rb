@@ -22,7 +22,13 @@ module Api
       end
 
       def update
-        render json: Link.update(params["id"], link_params)
+        link = Link.update(params["id"], link_params)
+        binding.pry
+        if link.save
+          render json: link
+        else
+          respond_with "Invalid url"
+        end
       end
 
       private
