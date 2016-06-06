@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to dashboard_path
+      redirect_to root_path
     else
       flash.now[:error] = "Invalid Input"
       render :new
@@ -15,7 +15,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    current_user
+    if !current_user
+      redirect_to signup_path
+    end
   end
 
 private

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'users#show'
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
@@ -7,5 +7,4 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   get "signup"  => "users#new"
-  get "/dashboard", to: "users#show"
 end
