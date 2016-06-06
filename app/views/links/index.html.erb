@@ -1,8 +1,8 @@
+<div id="flash">Invalid url</div>
 <h1>Links Index</h1>
 <%= link_to "Sign Out", logout_path, method: :delete %>
 
 <h3>Add a new link!</h3>
-<div id="flash">Invalid url</div>
 <form id="new-link" class="form-inline">
   <%= text_field_tag :title, nil, placeholder: "Luxurious Title", class: 'form-control' %>
   <%= text_field_tag :url, nil, placeholder: "What's your link?!", class: 'form-control' %>
@@ -10,14 +10,6 @@
 </form>
 
 <h3>Check out these links!!</h3>
-<h4>Search!</h4>
-
-<form class="navbar-form" role="search">
-  <div class="form-group has-feedback">
-      <input id='search-box' class="form-control" type="text" placeholder="Search links!">
-    <i class="glyphicon glyphicon-search form-control-feedback"></i>
-  </div>
-</form>
 
 <div>
   <ul id="links-list">

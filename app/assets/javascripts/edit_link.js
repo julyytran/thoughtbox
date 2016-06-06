@@ -32,15 +32,20 @@ function editContent (link, newContent) {
    },
    dataType: "json",
    success: function(datum) {
-     $("#links-list #" + datum.id).replaceWith(createLinkHTML(datum));
-   },
-   error: function (xhr, status, errorThrown) {
-     debugger
-      $(function() {
-        $('#flash').delay(300).fadeIn('normal', function() {
-          $(this).delay(2500).fadeOut();
-        });
-      });
+     if (datum.error) {
+      $("#links-list #" + datum.link.id).replaceWith(createLinkHTML(datum.link));
+      flashInvalidUrl();
+    } else {
+      $("#links-list #" + datum.id).replaceWith(createLinkHTML(datum));
     }
+   }
+  });
+}
+
+function flashInvalidUrl() {
+  $(function() {
+    $('#flash').delay(300).fadeIn('normal', function() {
+      $(this).delay(2500).fadeOut();
+    });
   });
 }

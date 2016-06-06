@@ -13,7 +13,7 @@ module Api
         if link.save
           render json: link
         else
-          respond_with "Invalid url"
+          render json: "Invalid url"
         end
       end
 
@@ -23,11 +23,10 @@ module Api
 
       def update
         link = Link.update(params["id"], link_params)
-        binding.pry
         if link.save
           render json: link
         else
-          respond_with "Invalid url"
+          render json: {status: :failure, error: "Invalid url", link: Link.find(params["id"])}
         end
       end
 

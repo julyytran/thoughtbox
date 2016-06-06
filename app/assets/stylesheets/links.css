@@ -1,4 +1,8 @@
-#flash { display:none; background-color:white; color:red}
+#flash {
+  display:none;
+  background-color:white; 
+  color:red
+}
 
 .unread {
   background-color: magenta;
