@@ -18,7 +18,7 @@ function createIdeaHTML (datum) {
   + datum.url
   + "</br></p>"
   + "<p class=read>" + datum.read + "</p>"
-  + "<button type='button' name='button' class='btn btn-info' id='upvote'>Mark as read!</button>"
+  + "<button type='button' name='button' class='btn btn-info unread' id='read'>Mark as read!</button>"
   + "<button type='button' name='button' class='btn btn-danger' id='delete'>Delete!</button>"
   + "</li>"
 }
