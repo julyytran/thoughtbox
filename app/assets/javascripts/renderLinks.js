@@ -23,7 +23,6 @@ function createLinkHTML (datum) {
   + "</br></p>"
   + "<p>" + datum.read + "</p>"
   + readButton(datum)
-  + "<button type='button' name='button' class='btn btn-info' id='edit'>Edit!</button>"
   + "<button type='button' name='button' class='btn btn-danger' id='delete'>Delete!</button>"
   + "</li>"
   + "</div>"

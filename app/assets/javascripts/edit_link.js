@@ -1,14 +1,20 @@
-function editLink() {
-  $('#links-list').on('click', '#edit', function() {
-    id = this.parentElement.id;
-    link = '#links-list #' + id;
-    title = link + ' .title';
-    url = link + ' .url';
-    $(title).attr('contentEditable', 'true');
-    $(url).attr('contentEditable', 'true');
-    $(link).on('blur keydown', function(event) {
-      if (event.keyCode === 13) {
-        editContent(this, {title: $(title).text(), url: $(url).text()});
+function editTitle() {
+  $('#links-list').on('click', '.title', function() {
+    $(this).attr('contentEditable', 'true');
+    $(this).on('blur keydown', function(event) {
+      if (event.type === "blur" || event.keyCode === 13) {
+        editContent(this, {title: $(this).text()});
+      }
+    });
+  });
+}
+
+function editUrl() {
+  $('#links-list').on('click', '.url', function() {
+    $(this).attr('contentEditable', 'true');
+    $(this).on('blur keydown', function(event) {
+      if (event.type === "blur" || event.keyCode === 13) {
+        editContent(this, {url: $(this).text()});
       }
     });
   });
@@ -17,7 +23,7 @@ function editLink() {
 function editContent (link, newContent) {
   $.ajax({
    type: "PATCH",
-   url: "/api/v1/links/" + link.id,
+   url: "/api/v1/links/" + link.parentElement.id,
    data: {
      link: {
        title: newContent.title,
