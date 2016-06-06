@@ -11,11 +11,11 @@ function appendLinks(data) {
 }
 
 function createIdeaHTML (datum) {
-  return "<div class='"
-  + readClass(datum)
-  + "'>"
-  + "<li id='"
+  return "<li id='"
   + datum.id
+  + "'"
+  + " class='"
+  + readClass(datum)
   + "'>"
   + "<h4 class='title'>" + datum.title + "</h4>"
   + "<p class='url'>"
