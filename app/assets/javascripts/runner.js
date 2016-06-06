@@ -4,4 +4,5 @@ $(document).ready(function () {
   changeReadStatus();
   editTitle();
   editUrl();
+  searchLinks();
 });
