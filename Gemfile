@@ -12,6 +12,7 @@ gem 'responders', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'selenium-webdriver'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'

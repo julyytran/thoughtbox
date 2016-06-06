@@ -44,6 +44,6 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.include Factory
-  config.include WaitForAjax, type: :feature
+  # config.include Factory
+  # config.include WaitForAjax, type: :feature
 end
