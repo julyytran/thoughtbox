@@ -1,8 +1,10 @@
 feature "Visitor can register" do
-  scenario "they are directed to their dashboard" do
+  scenario "they are directed to the links index" do
     visit root_path
 
-    expect(page).to have_content "Please sign up"
+    expect(page).to have_content "Log In or Sign Up"
+
+    click_on "Sign Up"
 
     fill_in "Email", with: "user@users.com"
     fill_in "Password", with: "password"
@@ -10,8 +12,9 @@ feature "Visitor can register" do
 
     click_on "Create Account"
 
-    expect(page).to have_content "links"
-    expect(page).to have_content "logout"
+    expect(page).to have_content "Links Index"
+    expect(page).to have_content "Sign Out"
+    expect(current_path).to eq root_path
   end
 
   # scenario "passwords do not match" do
