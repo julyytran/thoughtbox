@@ -11,22 +11,35 @@ function appendLinks(data) {
 }
 
 function createIdeaHTML (datum) {
-  return "<li id='"
-  + datum.id + "' >"
+  return "<div class='"
+  + readClass(datum)
+  + "'>"
+  + "<li id='"
+  + datum.id
+  + "'>"
   + "<h4 class='title'>" + datum.title + "</h4>"
   + "<p class='url'>"
   + datum.url
   + "</br></p>"
-  + "<p class=read>" + datum.read + "</p>"
+  + "<p>" + datum.read + "</p>"
   + readButton(datum)
   + "<button type='button' name='button' class='btn btn-danger' id='delete'>Delete!</button>"
   + "</li>"
+  + "</div>"
 }
 
 function readButton(datum) {
   if (datum.read === "false") {
-    return "<button type='button' name='button' class='btn btn-info unread' id='read'>Mark as read!</button>"
+    return "<button type='button' name='button' class='btn btn-info unread' id='read'>Mark as read!</button>";
   } else if (datum.read === "true") {
-    return "<button type='button' name='button' class='btn btn-warning read' id='read'>Mark as unread!</button>"
+    return "<button type='button' name='button' class='btn btn-warning read' id='read'>Mark as unread!</button>";
+  }
+}
+
+function readClass(datum) {
+  if (datum.read === "false") {
+    return "unread";
+  } else if (datum.read === "true") {
+    return "read";
   }
 }

@@ -1,1 +1,9 @@
 #flash { display:none; background-color:white; color:red}
+
+.unread {
+  background-color: magenta;
+}
+
+.read {
+  background-color: white;
+}
