@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true
+  validates_confirmation_of :password
   has_secure_password
 end

@@ -14,12 +14,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    if !current_user
-      redirect_to signup_path
-    end
-  end
-
 private
 
   def user_params
