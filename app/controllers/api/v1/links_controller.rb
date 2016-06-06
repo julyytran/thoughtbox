@@ -22,7 +22,7 @@ module Api
       private
 
       def link_params
-        params.require(:idea).permit(:title, :url, :read)
+        params.require(:link).permit(:title, :url, :read)
       end
     end
   end
