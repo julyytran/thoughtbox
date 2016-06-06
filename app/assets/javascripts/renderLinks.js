@@ -6,11 +6,11 @@ function renderLinks() {
 
 function appendLinks(data) {
   for (var i = 0; i < data.length; i++) {
-    $('#links-list').append(createIdeaHTML(data[i]));
+    $('#links-list').append(createLinkHTML(data[i]));
   }
 }
 
-function createIdeaHTML (datum) {
+function createLinkHTML (datum) {
   return "<li id='"
   + datum.id
   + "'"
@@ -30,7 +30,7 @@ function createIdeaHTML (datum) {
 
 function readButton(datum) {
   if (datum.read === "false") {
-    return "<button type='button' name='button' class='btn btn-info unread' id='read'>Mark as read!</button>";
+    return "<button type='button' name='button' class='btn btn-success unread' id='read'>Mark as read!</button>";
   } else if (datum.read === "true") {
     return "<button type='button' name='button' class='btn btn-warning read' id='read'>Mark as unread!</button>";
   }
