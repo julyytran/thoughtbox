@@ -8,7 +8,13 @@ module Api
       end
 
       def create
-        render json: Link.create(link_params)
+        link = Link.new(link_params)
+
+        if link.save
+          render json: link
+        else
+          respond_with "Invalid url"
+        end
       end
 
       def destroy
