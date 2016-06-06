@@ -18,7 +18,15 @@ function createIdeaHTML (datum) {
   + datum.url
   + "</br></p>"
   + "<p class=read>" + datum.read + "</p>"
-  + "<button type='button' name='button' class='btn btn-info unread' id='read'>Mark as read!</button>"
+  + readButton(datum)
   + "<button type='button' name='button' class='btn btn-danger' id='delete'>Delete!</button>"
   + "</li>"
+}
+
+function readButton(datum) {
+  if (datum.read === "false") {
+    return "<button type='button' name='button' class='btn btn-info unread' id='read'>Mark as read!</button>"
+  } else if (datum.read === "true") {
+    return "<button type='button' name='button' class='btn btn-warning read' id='read'>Mark as unread!</button>"
+  }
 }
