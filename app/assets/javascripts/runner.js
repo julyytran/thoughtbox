@@ -5,4 +5,6 @@ $(document).ready(function () {
   editTitle();
   editUrl();
   searchLinks();
+  filterByRead();
+  filterByUnread();
 });
